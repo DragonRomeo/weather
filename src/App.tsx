@@ -1,5 +1,9 @@
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+
 function App() {
-  return <></>;
+  // @ts-ignore: Store is empty.
+  return <Provider store={store}></Provider>;
 }
 
 export default App;
