@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import AppWrapper from './ui/app-wrapper/app-wrapper';
 import AppContainer from './ui/app-container/app-container';
-import AppContent from './ui/app-content/app-content';
+import AppContentContainer from './ui/app-content/app-content.container';
 
 function App() {
   // @ts-ignore: Store is empty.
@@ -10,7 +10,7 @@ function App() {
     <Provider store={store}>
       <AppWrapper>
         <AppContainer>
-          <AppContent />
+          <AppContentContainer />
         </AppContainer>
       </AppWrapper>
     </Provider>
