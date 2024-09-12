@@ -5,7 +5,6 @@ import AppContainer from './ui/app-container/app-container';
 import AppContentContainer from './ui/app-content/app-content.container';
 
 function App() {
-  // @ts-ignore: Store is empty.
   return (
     <Provider store={store}>
       <AppWrapper>
