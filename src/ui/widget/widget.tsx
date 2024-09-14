@@ -5,6 +5,7 @@ import City from './city/city';
 import WeatherIcon from './weatherIcon/weather-icon';
 import { Typography } from '@mui/material';
 import { temperatureFontSize } from '../common/styles/consts';
+import DateContainer from './date-container/date-container';
 
 type Props = {
   weather: IWeather | undefined;
@@ -35,6 +36,7 @@ const Widget: React.FC<Props> = ({ weather }) => {
           >
             <Typography variant='h3'>
               <City cityName={weather.location.name} />
+              <DateContainer />
             </Typography>
           </div>
           <WeatherIcon icon={weather.current.condition.icon} />

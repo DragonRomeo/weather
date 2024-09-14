@@ -6,6 +6,6 @@ export const mainTextColor = 'white';
 
 export const mainBgColor = 'transparent';
 
-export const widgetFontSize = '1.5rem';
+export const widgetFontSize = '1.1rem';
 
 export const temperatureFontSize = '7rem'
