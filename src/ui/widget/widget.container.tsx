@@ -1,9 +1,9 @@
-import React from 'react';
+import { useGetWeatherQuery } from '../../services/weather-service';
 import Widget from './widget';
 
 const WidgetContainer = () => {
-  // get Redux data and transfer it
-  return <Widget />;
+  const { data } = useGetWeatherQuery('Voronezh');
+  return <Widget weather={data} />;
 };
 
 export default WidgetContainer;
