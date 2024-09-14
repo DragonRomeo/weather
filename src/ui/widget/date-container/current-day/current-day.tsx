@@ -1,6 +1,4 @@
-import { Typography } from '@mui/material';
 import React from 'react';
-import { widgetFontSize } from '../../../common/styles/consts';
 
 type Props = {
   date: Date;
@@ -17,11 +15,7 @@ const daysOfWeek = [
 ];
 
 const CurrentDay: React.FC<Props> = ({ date }) => {
-  return (
-    <Typography variant='body1' fontSize={widgetFontSize}>
-      {daysOfWeek[date.getDay()]}
-    </Typography>
-  );
+  return <>{daysOfWeek[date.getDay()]}</>;
 };
 
 export default CurrentDay;

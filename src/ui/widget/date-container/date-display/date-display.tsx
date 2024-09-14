@@ -1,6 +1,4 @@
-import { Typography } from '@mui/material';
 import React from 'react';
-import { widgetFontSize } from '../../../common/styles/consts';
 
 type Props = {
   date: Date;
@@ -28,11 +26,7 @@ const DateDisplay: React.FC<Props> = ({ date }) => {
     date.getFullYear(),
   ];
 
-  return (
-    <Typography variant='body1' fontSize={widgetFontSize}>{`${day} ${
-      month[currMonth]
-    } ‘${year.toString().slice(-2)}`}</Typography>
-  );
+  return <>{`${day} ${month[currMonth]} ‘${year.toString().slice(-2)}`}</>;
 };
 
 export default DateDisplay;
