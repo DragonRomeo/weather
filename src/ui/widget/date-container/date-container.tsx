@@ -1,4 +1,6 @@
+import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
+import { widgetFontSize } from '../../common/styles/consts';
 
 const DateContainer = () => {
   const [time, setTime] = useState(new Date());
@@ -6,7 +8,7 @@ const DateContainer = () => {
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
   }, []);
-  
+
   return (
     <div
       style={{
@@ -17,7 +19,7 @@ const DateContainer = () => {
         alignItems: 'center',
       }}
     >
-      DateContainer
+      <Typography variant='body1' fontSize={widgetFontSize}></Typography>
     </div>
   );
 };
