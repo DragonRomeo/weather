@@ -1,10 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { IWeather } from '../../common/types/IWeather';
 
-const Widget = () => {
-    // Takes data only from 'father'
+type Props = {
+  weather: IWeather | undefined;
+};
+
+const Widget: React.FC<Props> = (
+  {
+    /* weather */
+  }
+) => {
+  // Takes data only from 'father'
   return (
-    <div>Widget</div>
-  )
-}
+    <div
+      style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}
+    ></div>
+  );
+};
 
-export default Widget
+export default Widget;
