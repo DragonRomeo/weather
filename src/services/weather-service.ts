@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { IWeather } from '../common/types/IWeather';
 
 const BASE_URL = 'https://api.weatherapi.com/v1/';
 const API_KEY = '19d22d45066d4d1589b124006241209';
@@ -10,7 +11,7 @@ export const weatherAPI = createApi({
     baseUrl: BASE_URL,
   }),
   endpoints: (builder) => ({
-    getWeather: builder.query({
+    getWeather: builder.query<IWeather, string>({
       query: (city) => `${METHOD}?key=${API_KEY}&q=${city}`,
     }),
   }),
