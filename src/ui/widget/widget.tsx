@@ -6,6 +6,7 @@ import WeatherIcon from './weatherIcon/weather-icon';
 import { Typography } from '@mui/material';
 import { temperatureFontSize } from '../common/styles/consts';
 import DateContainer from './date-container/date-container';
+import { widgetGap } from './widget.consts';
 
 type Props = {
   weather: IWeather | undefined;
@@ -18,7 +19,7 @@ const Widget: React.FC<Props> = ({ weather }) => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        gap: '10px',
+        gap: widgetGap,
       }}
     >
       {weather && (
