@@ -1,3 +1,4 @@
-export const INPUT_CITY_LABEL = 'Search Location';
-
-export const inputCityWidth = '100%';
+export const inputCityConsts = {
+  label: 'Search Location',
+  width: '100%',
+};

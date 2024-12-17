@@ -3,7 +3,7 @@ import {
   mainBgColor,
   mainTextColor,
   windowMinWidth,
-} from '../common/styles/consts';
+} from '../../common/styles/consts';
 
 type Props = {
   children: ReactNode;

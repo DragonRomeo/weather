@@ -1,20 +1,24 @@
 import { styled } from '@mui/material';
-import { foreCastMaxWidth } from './forecast.const';
+import { forecastConsts } from './forecast.const';
 import InputCity from './input-city/input-city';
+
+const ForeCastContainer = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  width: forecastConsts.width,
+  maxWidth: forecastConsts.maxWidth,
+  backdropFilter: forecastConsts.blur,
+  height: forecastConsts.height,
+  borderLeft: forecastConsts.borderLeft,
+  paddingLeft: forecastConsts.paddingLeft,
+});
 
 const Forecast = () => {
   // Takes data only from 'father'
-  const ForeCast = styled('div')({
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    maxWidth: foreCastMaxWidth,
-  });
   return (
-    <ForeCast>
-      <h1>Forecast</h1>
+    <ForeCastContainer>
       <InputCity />
-    </ForeCast>
+    </ForeCastContainer>
   );
 };
 

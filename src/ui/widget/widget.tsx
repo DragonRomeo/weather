@@ -3,25 +3,26 @@ import { IWeather } from '../../common/types/IWeather';
 import Temperature from './temperature/temperature';
 import City from './city/city';
 import WeatherIcon from './weatherIcon/weather-icon';
-import { Typography } from '@mui/material';
-import { temperatureFontSize } from '../common/styles/consts';
+import { styled, Typography } from '@mui/material';
+import { temperatureFontSize } from '../../common/styles/consts';
 import DateContainer from './date-container/date-container';
-import { widgetGap } from './widget.consts';
+import { widgetConsts } from './widget.consts';
 
 type Props = {
   weather: IWeather | undefined;
 };
 
+const Wrapper = styled('div')({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: widgetConsts.gap,
+  marginLeft: widgetConsts.marginLeft,
+});
+
 const Widget: React.FC<Props> = ({ weather }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: widgetGap,
-      }}
-    >
+    <Wrapper>
       {weather && (
         <>
           <Typography variant='h1' fontSize={temperatureFontSize}>
@@ -43,7 +44,7 @@ const Widget: React.FC<Props> = ({ weather }) => {
           <WeatherIcon icon={weather.current.condition.icon} />
         </>
       )}
-    </div>
+    </Wrapper>
   );
 };
 

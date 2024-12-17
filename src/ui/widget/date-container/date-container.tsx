@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { widgetFontSize } from '../../common/styles/consts';
+import { widgetFontSize } from '../../../common/styles/consts';
 import Time from './time/time';
 import CurrentDay from './current-day/current-day';
 import DateDisplay from './date-display/date-display';
