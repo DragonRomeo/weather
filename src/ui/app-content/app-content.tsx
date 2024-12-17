@@ -1,10 +1,19 @@
+import { styled } from '@mui/material/styles';
+import ForecastContainer from '../forecast/forecast.container';
 import WidgetContainer from '../widget/widget.container';
 
 const AppContent = () => {
+  const AppContent = styled('div')({
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  });
   return (
-    <div>
+    <AppContent>
       <WidgetContainer />
-    </div>
+      <ForecastContainer />
+    </AppContent>
   );
 };
 

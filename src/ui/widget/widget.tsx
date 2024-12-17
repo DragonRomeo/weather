@@ -26,7 +26,7 @@ const Widget: React.FC<Props> = ({ weather }) => {
         <>
           <Typography variant='h1' fontSize={temperatureFontSize}>
             <Temperature
-              currentTemperature={Math.trunc(weather.current.temp_c)}
+              currentTemperature={Math.round(weather.current.temp_c)}
             />
           </Typography>
           <div
