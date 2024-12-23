@@ -1,6 +1,7 @@
 import { styled } from '@mui/material';
 import { forecastConsts } from './forecast.const';
 import InputCity from './input-city/input-city';
+import WeatherDetailWrapper from './weather-details/weather-details.wrapper';
 
 const ForeCastContainer = styled('div')({
   display: 'flex',
@@ -18,6 +19,7 @@ const Forecast = () => {
   return (
     <ForeCastContainer>
       <InputCity />
+      <WeatherDetailWrapper />
     </ForeCastContainer>
   );
 };

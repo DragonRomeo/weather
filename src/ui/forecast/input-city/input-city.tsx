@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-import { styled } from '@mui/material/styles';
 import { inputCityConsts } from './input-city.consts';
 import { IconButton, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch } from 'react-redux';
 import { putCity } from '../../../store/slices/citySlice';
-import { MUISpacePx } from '../../../common/styles/consts';
-
-const InputCityWrapper = styled('div')({
-  width: inputCityConsts.width,
-  marginTop: MUISpacePx * 5,
-});
+import { InputCityWrapper } from './input-city.styles';
 
 const InputCity = () => {
   const [value, setValue] = useState('');
@@ -21,6 +15,9 @@ const InputCity = () => {
   };
 
   const handleClick = () => {
+    if (!value.length) {
+      return;
+    }
     dispatch(putCity(value));
     setValue('');
   };
@@ -30,6 +27,7 @@ const InputCity = () => {
       handleClick();
     }
   };
+  
   return (
     <InputCityWrapper>
       <TextField
