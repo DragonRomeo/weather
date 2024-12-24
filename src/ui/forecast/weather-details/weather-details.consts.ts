@@ -45,7 +45,7 @@ export const WeatherItems = {
   Wind: {
     name: 'wind',
     unitOfMeasure: 'km/h',
-    icon: WeatherDetailsIcons.CloudIcon,
+    icon: WeatherDetailsIcons.WindIcon,
   },
   FeelsLike: {
     name: 'feels like',
