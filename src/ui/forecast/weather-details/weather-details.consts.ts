@@ -2,6 +2,7 @@ import humidityIcon from '../../../assets/icons/humidity-icon.svg';
 import cloudIcon from '../../../assets/icons/cloud-icon.svg';
 import windIcon from '../../../assets/icons/wind-icon.svg';
 import temperatureIcon from '../../../assets/icons/temperature-icon.svg';
+import { curLabel } from '../../../common/lang/lang';
 
 export const weatherDetailsConsts = {
   title: 'Weather details...',
@@ -33,23 +34,23 @@ export const WeatherDetailsIcons = {
 
 export const WeatherItems = {
   Humidity: {
-    name: 'humidity',
-    unitOfMeasure: '%',
+    name: curLabel.WeatherDetails.humidity.name,
+    unitOfMeasure: curLabel.WeatherDetails.humidity.unitOfMeasure,
     icon: WeatherDetailsIcons.HumidityIcon,
   },
   Cloudy: {
-    name: 'cloudy',
-    unitOfMeasure: '%',
+    name: curLabel.WeatherDetails.cloudy.name,
+    unitOfMeasure: curLabel.WeatherDetails.cloudy.unitOfMeasure,
     icon: WeatherDetailsIcons.CloudIcon,
   },
   Wind: {
-    name: 'wind',
-    unitOfMeasure: 'km/h',
+    name: curLabel.WeatherDetails.wind.name,
+    unitOfMeasure: curLabel.WeatherDetails.wind.unitOfMeasure,
     icon: WeatherDetailsIcons.WindIcon,
   },
   FeelsLike: {
-    name: 'feels like',
-    unitOfMeasure: '°',
+    name: curLabel.WeatherDetails.fellsLike.name,
+    unitOfMeasure: curLabel.WeatherDetails.fellsLike.unitOfMeasure,
     icon: WeatherDetailsIcons.TemperatureIcon,
   },
 };

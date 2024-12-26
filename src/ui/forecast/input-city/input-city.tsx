@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { inputCityConsts } from './input-city.consts';
 import { IconButton, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch } from 'react-redux';
 import { putCity } from '../../../store/slices/citySlice';
 import { InputCityWrapper } from './input-city.styles';
+import { curLabel } from '../../../common/lang/lang';
 
 const InputCity = () => {
   const [value, setValue] = useState('');
@@ -27,12 +27,12 @@ const InputCity = () => {
       handleClick();
     }
   };
-  
+
   return (
     <InputCityWrapper>
       <TextField
         value={value}
-        label={inputCityConsts.label}
+        label={curLabel.InputCity.LABEL}
         variant='standard'
         onChange={handleChange}
         onKeyUp={handleKeyPress}

@@ -4,7 +4,6 @@ import AppWrapper from './ui/app-wrapper/app-wrapper';
 import AppContainer from './ui/app-container/app-container';
 import AppContentContainer from './ui/app-content/app-content.container';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 
 const darkTheme = createTheme({
   palette: {

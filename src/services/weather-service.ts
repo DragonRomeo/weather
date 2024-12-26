@@ -4,6 +4,7 @@ import { IWeather } from '../common/types/IWeather';
 const BASE_URL = 'https://api.weatherapi.com/v1/';
 const API_KEY = '19d22d45066d4d1589b124006241209';
 const METHOD = 'current.json';
+const lang = 'ru';
 
 export const weatherAPI = createApi({
   reducerPath: 'weatherAPI',
@@ -12,7 +13,7 @@ export const weatherAPI = createApi({
   }),
   endpoints: (builder) => ({
     getWeather: builder.query<IWeather, string>({
-      query: (city) => `${METHOD}?key=${API_KEY}&q=${city}`,
+      query: (city) => `${METHOD}?key=${API_KEY}&q=${city}&lang=${lang}`,
     }),
   }),
 });

@@ -1,8 +1,9 @@
 import React from 'react';
 import WeatherItem from './weather-item/weather-item';
 import { IWeather } from '../../../common/types/IWeather';
-import { weatherDetailsConsts, WeatherItems } from './weather-details.consts';
+import { WeatherItems } from './weather-details.consts';
 import { Container, WeatherContainer, Wrapper } from './weather-details.styles';
+import { curLabel } from '../../../common/lang/lang';
 
 type Props = {
   weather: IWeather | undefined;
@@ -12,7 +13,7 @@ const WeatherDetails: React.FC<Props> = ({ weather }) => {
   return (
     <Wrapper>
       <Container>
-        <h4>{weatherDetailsConsts.title}</h4>
+        <h4>{curLabel.WeatherDetails.TITLE}</h4>
         {weather && (
           <WeatherContainer>
             <h3>{weather.current.condition.text.toUpperCase()}</h3>
