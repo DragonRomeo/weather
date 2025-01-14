@@ -23,6 +23,13 @@ const BasicPopover: React.FC<Props> = ({
         open={open}
         anchorEl={anchorEl}
         onClose={onClose}
+        slotProps={{
+          paper: {
+            style: {
+              backgroundColor: 'rgba(2, 1, 1, 0.8)',
+            },
+          },
+        }}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'left',

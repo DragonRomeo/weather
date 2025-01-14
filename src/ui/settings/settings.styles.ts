@@ -9,7 +9,6 @@ export const Content = styled('div')({
   flexDirection: 'column',
   width: '40vh',
   height: '400px',
-  backdropFilter: 'blur(2px)',
 });
 
 export const Container = styled('div')({

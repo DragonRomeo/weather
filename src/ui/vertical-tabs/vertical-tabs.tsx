@@ -27,7 +27,7 @@ const VerticalTabs: React.FC<Props> = ({ options }) => {
     <Box
       sx={{
         flexGrow: 1,
-        bgcolor: 'background.paper',
+        bgcolor: 'background.inherit',
         display: 'flex',
         height: 224,
       }}
