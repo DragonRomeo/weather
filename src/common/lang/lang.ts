@@ -1,4 +1,5 @@
 import { lang } from '../types/common';
+import { getCurrentLanguage } from './lang.helpers';
 
 export const labels = {
   en: {
@@ -78,5 +79,5 @@ export const languageSelection = (lang: lang) => {
   return labels[lang];
 };
 
-const currentLanguage = 'ru';
+const currentLanguage = getCurrentLanguage();
 export const curLabel = languageSelection(currentLanguage);

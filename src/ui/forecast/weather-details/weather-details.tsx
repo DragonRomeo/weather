@@ -29,6 +29,7 @@ const WeatherDetails: React.FC<Props> = ({ weather }) => {
               unitOfMeasure={WeatherItems.Cloudy.unitOfMeasure}
               icon={WeatherItems.Cloudy.icon}
             ></WeatherItem>
+            {/* TODO: replace it with meters per second ? */}
             <WeatherItem
               name={WeatherItems.Wind.name}
               value={weather.current.wind_kph}

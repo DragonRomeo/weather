@@ -1,19 +1,17 @@
-import { styled } from '@mui/material/styles';
 import ForecastContainer from '../forecast/forecast.container';
 import WidgetContainer from '../widget/widget.container';
+import SettingsContainer from '../settings/setting.container';
+import { Content } from './app-content.styles';
+import { initLocalStorage } from '../../common/localStorage/localStorage';
 
 const AppContent = () => {
-  const AppContent = styled('div')({
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  });
+  initLocalStorage();
   return (
-    <AppContent>
+    <Content>
+      <SettingsContainer />
       <WidgetContainer />
       <ForecastContainer />
-    </AppContent>
+    </Content>
   );
 };
 
