@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { putCity } from '../../../store/slices/citySlice';
 import { InputCityWrapper } from './input-city.styles';
 import { curLabel } from '../../../common/lang/lang';
+import { putTheCityInLocalStorage } from './input-city.helpers';
 
 const InputCity = () => {
   const [value, setValue] = useState('');
@@ -18,6 +19,7 @@ const InputCity = () => {
     if (!value.length) {
       return;
     }
+    putTheCityInLocalStorage(value);
     dispatch(putCity(value));
     setValue('');
   };

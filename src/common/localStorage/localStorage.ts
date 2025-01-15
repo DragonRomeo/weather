@@ -1,3 +1,4 @@
+import { defaultCity } from '../../store/slices/citySlice';
 import { lang } from '../types/common';
 import { DataLocalStorage } from '../types/DataLocalStorage';
 
@@ -15,6 +16,7 @@ export const appLSdata: DataLocalStorage = {
   language: {
     currentLanguage: languages.ru,
   },
+  city: defaultCity,
 };
 
 export const storageName = 'weatherApp';

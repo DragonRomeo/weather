@@ -4,4 +4,5 @@ export interface DataLocalStorage {
   language: {
     currentLanguage: lang;
   };
+  city: string;
 }
