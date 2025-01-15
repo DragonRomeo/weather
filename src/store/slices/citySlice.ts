@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+export const defaultCity = 'Voronezh';
+
 export const citySlice = createSlice({
   name: 'city',
   initialState: {
-    //TODO: get 1t value from local storage if this empty use Voronezh instead
-    name: 'Voronezh',
+    name: defaultCity,
   },
   reducers: {
     putCity: (state, action: PayloadAction<string>) => {
