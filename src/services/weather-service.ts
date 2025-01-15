@@ -1,10 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { IWeather } from '../common/types/IWeather';
+import { getCurrentLanguage } from '../common/lang/lang.helpers';
 
 const BASE_URL = 'https://api.weatherapi.com/v1/';
 const API_KEY = '19d22d45066d4d1589b124006241209';
 const METHOD = 'current.json';
-const lang = 'ru';
+
+const lang = getCurrentLanguage();
 
 export const weatherAPI = createApi({
   reducerPath: 'weatherAPI',
