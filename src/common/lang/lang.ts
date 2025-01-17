@@ -1,7 +1,7 @@
 import { lang } from '../types/common';
 import { getCurrentLanguage } from './lang.helpers';
 
-export const labels = {
+const labels = {
   en: {
     // TODO: сделать данные о месяцах полными и обрезать в самом компоненте.
     months: [
@@ -32,6 +32,7 @@ export const labels = {
     },
     WeatherDetails: {
       TITLE: 'Weather details...',
+      buttonTitle: 'Weather Details', 
       humidity: { name: 'humidity', unitOfMeasure: '%' },
       cloudy: { name: 'cloudy', unitOfMeasure: '%' },
       wind: { name: 'wind', unitOfMeasure: 'km/h' },
@@ -67,6 +68,7 @@ export const labels = {
     },
     WeatherDetails: {
       TITLE: 'Подробная информация о погоде...',
+      buttonTitle: 'Информация о погоде', 
       humidity: { name: 'влажность', unitOfMeasure: '%' },
       cloudy: { name: 'облачность', unitOfMeasure: '%' },
       wind: { name: 'ветер', unitOfMeasure: 'км/ч' },
