@@ -1,10 +1,15 @@
 import { Button } from '@mui/material';
 import { curLabel } from '../../common/lang/lang';
+import { FC } from 'react';
 
-const ForecastSwitchButton = () => {
+interface Props {
+  onClick: () => void;
+}
+
+const ForecastSwitchButton: FC<Props> = ({ onClick }) => {
   return (
     <div>
-      <Button sx={{ margin: '10px' }} variant='outlined'>
+      <Button sx={{ margin: '10px' }} onClick={onClick} variant='outlined'>
         {curLabel.WeatherDetails.buttonTitle}
       </Button>
     </div>

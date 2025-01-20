@@ -5,8 +5,6 @@ export const Container = styled('div')({
   flexDirection: 'column',
   width: '100%',
   maxWidth: '526px',
-  backdropFilter: 'blur(2px)',
-  height: '100vh',
-  borderLeft: 'solid 3px',
+  background: 'inherit',
   paddingLeft: '35px',
 });
