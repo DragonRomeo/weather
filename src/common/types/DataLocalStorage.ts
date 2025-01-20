@@ -5,4 +5,7 @@ export interface DataLocalStorage {
     currentLanguage: lang;
   };
   city: string;
+  drawerStates: {
+    [key: string]: boolean;
+  };
 }
