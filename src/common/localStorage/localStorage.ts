@@ -17,6 +17,7 @@ export const appLSdata: DataLocalStorage = {
     currentLanguage: languages.ru,
   },
   city: defaultCity,
+  drawerStates: {},
 };
 
 export const storageName = 'weatherApp';
