@@ -8,6 +8,6 @@ export const mainBgColor = 'transparent';
 
 export const widgetFontSize = '1.1rem';
 
-export const temperatureFontSize = '8rem'
+export const temperatureFontSize = '8rem';
 
-
+export const muiBorderColor = 'rgba(255, 255, 255, 0.12)';

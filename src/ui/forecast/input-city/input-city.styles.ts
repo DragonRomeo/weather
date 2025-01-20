@@ -3,5 +3,5 @@ import { MUISpacePx } from '../../../common/styles/consts';
 
 export const InputCityWrapper = styled('div')({
   width: '100%',
-  marginTop: MUISpacePx * 5,
+  marginTop: MUISpacePx,
 });
