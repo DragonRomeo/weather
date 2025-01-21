@@ -4,6 +4,7 @@ import { IWeather } from '../../../common/types/IWeather';
 import { WeatherItems } from './weather-details.consts';
 import { Container, WeatherContainer, Wrapper } from './weather-details.styles';
 import { curLabel } from '../../../common/lang/lang';
+import { getMetersPerSecond } from './weather-details.helpers';
 
 type Props = {
   weather: IWeather | undefined;
@@ -29,10 +30,9 @@ const WeatherDetails: React.FC<Props> = ({ weather }) => {
               unitOfMeasure={WeatherItems.Cloudy.unitOfMeasure}
               icon={WeatherItems.Cloudy.icon}
             ></WeatherItem>
-            {/* TODO: replace it with meters per second ? */}
             <WeatherItem
               name={WeatherItems.Wind.name}
-              value={weather.current.wind_kph}
+              value={getMetersPerSecond(weather.current.wind_kph)}
               unitOfMeasure={WeatherItems.Wind.unitOfMeasure}
               icon={WeatherItems.Wind.icon}
             ></WeatherItem>
