@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherIcon from '../../../widget/weatherIcon/weather-icon';
+import WeatherIcon from '../../../widget/weather-icon/weather-icon';
 import { capitalize } from '../../../../common/helpers/string';
 import { Container, TemperatureContainer } from './weather-item.styles';
 import { IIconItem } from './weather-item.types';
