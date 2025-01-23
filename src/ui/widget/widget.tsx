@@ -17,7 +17,6 @@ const Wrapper = styled('div')({
   flexDirection: 'row',
   alignItems: 'center',
   gap: widgetConsts.gap,
-  marginLeft: widgetConsts.marginLeft,
 });
 
 const Widget: React.FC<Props> = ({ weather }) => {
@@ -26,9 +25,7 @@ const Widget: React.FC<Props> = ({ weather }) => {
       {weather && (
         <>
           <Typography variant='h1' fontSize={temperatureFontSize}>
-            <Temperature
-              currentTemperature={Math.round(weather.current.temp_c)}
-            />
+            <Temperature>{weather.current.temp_c}</Temperature>
           </Typography>
           <div
             style={{

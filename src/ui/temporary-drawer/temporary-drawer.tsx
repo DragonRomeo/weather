@@ -36,7 +36,7 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
       <Drawer
         variant='persistent'
         PaperProps={{
-          style: { width: '50vh', backgroundColor: 'inherit' },
+          style: { width: '55vh', backgroundColor: 'inherit' },
         }}
         open={open}
         anchor='right'

@@ -32,11 +32,14 @@ const labels = {
     },
     WeatherDetails: {
       TITLE: 'Weather details...',
-      buttonTitle: 'Weather Details', 
+      buttonTitle: 'Weather Details',
       humidity: { name: 'humidity', unitOfMeasure: '%' },
       cloudy: { name: 'cloudy', unitOfMeasure: '%' },
       wind: { name: 'wind', unitOfMeasure: 'm/s' },
       fellsLike: { name: 'feels like', unitOfMeasure: '°' },
+    },
+    ScheduleWidget: {
+      TITLE: 'Daily weather schedule...',
     },
   },
   ru: {
@@ -68,11 +71,14 @@ const labels = {
     },
     WeatherDetails: {
       TITLE: 'Подробная информация о погоде...',
-      buttonTitle: 'Информация о погоде', 
+      buttonTitle: 'Информация о погоде',
       humidity: { name: 'влажность', unitOfMeasure: '%' },
       cloudy: { name: 'облачность', unitOfMeasure: '%' },
       wind: { name: 'ветер', unitOfMeasure: 'м/с' },
       fellsLike: { name: 'ощущается как', unitOfMeasure: '°' },
+    },
+    ScheduleWidget: {
+      TITLE: 'Расписание погоды на сутки...',
     },
   },
 };

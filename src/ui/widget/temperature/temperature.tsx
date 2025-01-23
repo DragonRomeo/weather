@@ -1,12 +1,12 @@
 import React from 'react';
 
 type Props = {
-  currentTemperature: number;
+  children: number;
   symbol?: string;
 };
 
-const Temperature: React.FC<Props> = ({ currentTemperature, symbol = '°' }) => {
-  return <> {currentTemperature + symbol}</>;
+const Temperature: React.FC<Props> = ({ children, symbol = '°' }) => {
+  return <> {Math.round(children) + symbol}</>;
 };
 
 export default Temperature;

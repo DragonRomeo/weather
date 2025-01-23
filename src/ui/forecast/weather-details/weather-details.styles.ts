@@ -3,7 +3,9 @@ import { styled } from '@mui/material';
 
 export const Wrapper = styled('div')({
   display: 'flex',
-  width: '70%',
+  width: '80%',
+  borderBottom: '1px solid white',
+  paddingBottom: MUISpacePx * 4,
 });
 
 export const Container = styled('div')({
