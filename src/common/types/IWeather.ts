@@ -1,6 +1,13 @@
 export interface IWeather {
   location: Location;
   current: Current;
+  forecast: {
+    forecastday: Array<IForecastday>;
+  };
+}
+
+export interface IForecastday {
+  hour: Array<iHour>;
 }
 
 export interface Location {
@@ -14,7 +21,7 @@ export interface Location {
   localtime: string;
 }
 
-export interface Current {
+interface Current {
   last_updated_epoch: number;
   last_updated: string;
   temp_c: number;
@@ -44,6 +51,10 @@ export interface Current {
   uv: number;
   gust_mph: number;
   gust_kph: number;
+}
+
+interface iHour extends Current {
+  time: string;
 }
 
 export interface Condition {
