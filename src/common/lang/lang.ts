@@ -41,6 +41,10 @@ const labels = {
     ScheduleWidget: {
       TITLE: 'Daily weather schedule...',
     },
+    SettingsData: {
+      TITLE: 'Language',
+      values: ['Russian', 'English'],
+    },
   },
   ru: {
     months: [
@@ -79,6 +83,10 @@ const labels = {
     },
     ScheduleWidget: {
       TITLE: 'Расписание погоды на сутки...',
+    },
+    SettingsData: {
+      TITLE: 'Язык',
+      values: ['Русский', 'Английский'],
     },
   },
 };
