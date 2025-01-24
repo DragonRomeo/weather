@@ -1,7 +1,7 @@
-import { IconButton } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import React, { FC, useState } from 'react';
 import BasicPopover from '../basic-popover/basic-popover';
-import { Content, Wrapper } from './menu-button.styles';
+import { styles } from './menu-button.styles';
 
 interface Props {
   icon: React.ReactNode;
@@ -22,8 +22,13 @@ const MenuButton: FC<Props> = ({ icon, children }) => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Wrapper>
-      <IconButton aria-label={id} size='medium' onClick={handleClick}>
+    <Box sx={styles.wrapper}>
+      <IconButton
+        sx={styles.icon_button}
+        aria-label={id}
+        size='medium'
+        onClick={handleClick}
+      >
         {icon}
       </IconButton>
       <BasicPopover
@@ -32,11 +37,9 @@ const MenuButton: FC<Props> = ({ icon, children }) => {
         anchorEl={anchorEl}
         onClose={handleClose}
       >
-        <Content>
-          {children}
-        </Content>
+        <Box sx={styles.content}>{children}</Box>
       </BasicPopover>
-    </Wrapper>
+    </Box>
   );
 };
 
