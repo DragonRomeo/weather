@@ -5,11 +5,13 @@ import { initLocalStorage } from '../../common/localStorage/localStorage';
 import { useDispatch } from 'react-redux';
 import { putCity } from '../../store/slices/citySlice';
 import TemporaryDrawer from '../temporary-drawer/temporary-drawer';
-import { city, id } from './app-content.consts';
+import { id } from './app-content.consts';
 import { Box } from '@mui/material';
+import { getCityFromLocalStorage } from '../forecast/input-city/input-city.helpers';
 
 const AppContent = () => {
   initLocalStorage();
+  const city = getCityFromLocalStorage();
   const dispatch = useDispatch();
   dispatch(putCity(city));
   return (

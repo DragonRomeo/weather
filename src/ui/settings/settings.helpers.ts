@@ -1,3 +1,4 @@
+import { curLabel } from '../../common/lang/lang';
 import {
   getObjFromLocalStorage,
   setObjToLocalStorage,
@@ -18,8 +19,8 @@ interface HashLang {
 }
 
 const hashLang: HashLang = {
-  russian: 'ru',
-  english: 'en',
+  [curLabel.SettingsData.values[0]]: 'ru',
+  [curLabel.SettingsData.values[1]]: 'en',
 };
 
 export const changeLanguage = (language: string) => {
