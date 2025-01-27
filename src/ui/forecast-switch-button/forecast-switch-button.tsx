@@ -1,6 +1,7 @@
-import { Button } from '@mui/material';
-import { curLabel } from '../../common/lang/lang';
+import { Box, IconButton } from '@mui/material';
 import { FC } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import WeatherBox from '../weather-box/weather-box';
 
 interface Props {
   onClick: () => void;
@@ -8,11 +9,17 @@ interface Props {
 
 const ForecastSwitchButton: FC<Props> = ({ onClick }) => {
   return (
-    <div>
-      <Button sx={{ margin: '10px' }} onClick={onClick} variant='outlined'>
-        {curLabel.WeatherDetails.buttonTitle}
-      </Button>
-    </div>
+    <Box style={{ margin: '10px' }}>
+      <WeatherBox>
+        <IconButton
+          size='medium'
+          sx={{ borderRadius: 'inherit' }}
+          onClick={onClick}
+        >
+          <MenuIcon fontSize='inherit' />
+        </IconButton>
+      </WeatherBox>
+    </Box>
   );
 };
 

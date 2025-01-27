@@ -31,8 +31,10 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
   };
 
   return (
-    <div>
-      <ForecastSwitchButton onClick={toggleDrawer()} />
+    <Box>
+      <Box sx={{ marginRight: '20px' }}>
+        <ForecastSwitchButton onClick={toggleDrawer()} />
+      </Box>
       <Drawer
         variant='persistent'
         PaperProps={drawerProps.drawer_paper}
@@ -49,7 +51,7 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
           <ForecastContainer />
         </Box>
       </Drawer>
-    </div>
+    </Box>
   );
 };
 
