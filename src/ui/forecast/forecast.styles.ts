@@ -1,10 +1,12 @@
-import { styled } from '@mui/material';
+import { SxStyles } from '../../common/types/common';
 
-export const Container = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-  maxWidth: '526px',
-  background: 'inherit',
-  paddingLeft: '35px',
-});
+export const styles: SxStyles = {
+  box_container: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    background: 'inherit',
+    paddingLeft: '35px',
+    gap: '50px',
+  },
+};
