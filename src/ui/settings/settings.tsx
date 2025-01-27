@@ -6,9 +6,7 @@ import MenuButton from '../menu-button/menu-button';
 const Settings = () => {
   return (
     <>
-      <MenuButton
-        icon={<SettingsIcon sx={{ width: '35px', height: '35px' }} />}
-      >
+      <MenuButton icon={<SettingsIcon fontSize='medium' />}>
         <VerticalTabs options={optionsData} />
       </MenuButton>
     </>

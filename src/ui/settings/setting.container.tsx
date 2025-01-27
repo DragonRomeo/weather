@@ -1,11 +1,11 @@
+import WeatherBox from '../weather-box/weather-box';
 import Settings from './settings';
-import { Container } from './settings.styles';
 
 const SettingsContainer = () => {
   return (
-    <Container>
+    <WeatherBox>
       <Settings />
-    </Container>
+    </WeatherBox>
   );
 };
 
