@@ -1,7 +1,4 @@
 export const styles = {
-  wrapper: {
-    marginBottom: '20px',
-  },
   content: {
     display: 'flex',
     flexDirection: 'column',

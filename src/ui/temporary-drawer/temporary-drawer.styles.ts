@@ -18,6 +18,12 @@ export const styles: SxStyles = {
       padding: `${MUISpacePx} ${MUISpacePx}`,
     },
   },
+  icons_container: {
+    marginRight: '20px',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 };
 
 export const drawerProps = {

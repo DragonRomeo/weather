@@ -8,6 +8,7 @@ import {
   setDrawerIdToLs,
   setStateFromLocalStorage,
 } from './temporary-drawer.helpers';
+import SettingsContainer from '../settings/setting.container';
 
 interface Props {
   localStorageCreateId?: string;
@@ -32,8 +33,9 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
 
   return (
     <Box>
-      <Box sx={{ marginRight: '20px' }}>
+      <Box sx={styles.icons_container}>
         <ForecastSwitchButton onClick={toggleDrawer()} />
+        <SettingsContainer />
       </Box>
       <Drawer
         variant='persistent'

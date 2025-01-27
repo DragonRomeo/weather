@@ -22,7 +22,7 @@ const MenuButton: FC<Props> = ({ icon, children }) => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Box sx={styles.wrapper}>
+    <Box>
       <IconButton
         sx={styles.icon_button}
         aria-label={id}
