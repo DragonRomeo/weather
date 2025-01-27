@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import ForecastSwitchButton from '../forecast-switch-button/forecast-switch-button';
-import { Drawer, IconButton } from '@mui/material';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Box, Drawer, IconButton } from '@mui/material';
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import ForecastContainer from '../forecast/forecast.container';
-import { DrawerHeader } from './temporary-drawer.styles';
+import { drawerProps, styles } from './temporary-drawer.styles';
 import {
   setDrawerIdToLs,
   setStateFromLocalStorage,
@@ -22,8 +22,8 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
     }
   }, []);
 
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
+  const toggleDrawer = () => () => {
+    setOpen((prevState) => !prevState);
     if (localStorageCreateId) {
       // maybe need listener who lauch this code before user close app
       setDrawerIdToLs(open, localStorageCreateId);
@@ -32,28 +32,22 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
 
   return (
     <div>
-      <ForecastSwitchButton onClick={toggleDrawer(true)} />
+      <ForecastSwitchButton onClick={toggleDrawer()} />
       <Drawer
         variant='persistent'
-        PaperProps={{
-          style: { width: '55vh', backgroundColor: 'inherit' },
-        }}
+        PaperProps={drawerProps.drawer_paper}
         open={open}
-        anchor='right'
-        onClose={toggleDrawer(false)}
+        anchor='bottom'
+        onClose={toggleDrawer()}
       >
-        <DrawerHeader>
-          <div>
-            <IconButton
-              color='primary'
-              size='large'
-              onClick={toggleDrawer(false)}
-            >
-              <ChevronRightIcon fontSize='inherit' />
+        <Box sx={styles.drawer_header}>
+          <Box>
+            <IconButton color='primary' size='large' onClick={toggleDrawer()}>
+              <ExpandCircleDownIcon fontSize='inherit' />
             </IconButton>
-          </div>
+          </Box>
           <ForecastContainer />
-        </DrawerHeader>
+        </Box>
       </Drawer>
     </div>
   );
