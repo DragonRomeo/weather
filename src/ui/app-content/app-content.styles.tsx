@@ -5,7 +5,7 @@ export const Content = styled('div')({
   width: '100%',
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   height: '100vh',
 });
 
