@@ -1,8 +1,12 @@
 import { styled } from '@mui/material';
-import { muiBorderColor, MUISpacePx } from '../../common/styles/consts';
+import {
+  blurBackground,
+  muiBorderColor,
+  MUISpacePx,
+} from '../../common/styles/consts';
 
 export const DrawerHeader = styled('div')({
-  backdropFilter: 'blur(2px)',
+  backdropFilter: blurBackground,
   $div: {
     display: 'flex',
     alignItems: 'center',
