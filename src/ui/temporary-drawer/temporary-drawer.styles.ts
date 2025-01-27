@@ -8,6 +8,11 @@ import { SxStyles } from '../../common/types/common';
 const width = '80%';
 
 export const styles: SxStyles = {
+  drawer_container: {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+  },
   drawer_header: {
     backdropFilter: blurBackground,
     $div: {

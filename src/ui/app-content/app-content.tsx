@@ -1,5 +1,4 @@
 import WidgetContainer from '../widget/widget.container';
-import SettingsContainer from '../settings/setting.container';
 import { Content, styles } from './app-content.styles';
 import { initLocalStorage } from '../../common/localStorage/localStorage';
 import { useDispatch } from 'react-redux';
@@ -16,7 +15,6 @@ const AppContent = () => {
   dispatch(putCity(city));
   return (
     <Content>
-      <SettingsContainer />
       <Box sx={styles.widget_wrapper}>
         <WidgetContainer />
       </Box>

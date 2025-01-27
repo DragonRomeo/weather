@@ -32,7 +32,7 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
   };
 
   return (
-    <Box>
+    <Box sx={styles.drawer_container}>
       <Box sx={styles.icons_container}>
         <ForecastSwitchButton onClick={toggleDrawer()} />
         <SettingsContainer />
