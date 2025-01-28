@@ -45,6 +45,9 @@ const labels = {
       TITLE: 'Language',
       values: ['Russian', 'English'],
     },
+    Widget: {
+      feelsLike: 'Feels like'
+    }
   },
   ru: {
     months: [
@@ -88,6 +91,9 @@ const labels = {
       TITLE: 'Язык',
       values: ['Русский', 'Английский'],
     },
+    Widget: {
+      feelsLike: 'Ощущается как'
+    }
   },
 };
 
