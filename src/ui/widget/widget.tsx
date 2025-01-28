@@ -3,45 +3,38 @@ import { IWeather } from '../../common/types/IWeather';
 import Temperature from './temperature/temperature';
 import City from './city/city';
 import WeatherIcon from './weather-icon/weather-icon';
-import { styled, Typography } from '@mui/material';
-import { temperatureFontSize } from '../../common/styles/consts';
-import DateContainer from './date-container/date-container';
-import { widgetConsts } from './widget.consts';
+import { Box, Typography } from '@mui/material';
+import { styles } from './widget.styles';
+import { curLabel } from '../../common/lang/lang';
 
 type Props = {
   weather: IWeather | undefined;
 };
 
-const Wrapper = styled('div')({
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  gap: widgetConsts.gap,
-});
-
 const Widget: React.FC<Props> = ({ weather }) => {
   return (
-    <Wrapper>
+    <Box sx={styles.widget_wrapper}>
       {weather && (
         <>
-          <Typography variant='h1' fontSize={temperatureFontSize}>
+          <Typography variant='h1' sx={styles.current_temperature_typography}>
             <Temperature>{weather.current.temp_c}</Temperature>
           </Typography>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <Typography variant='h3'>
+          <Box sx={styles.info_container}>
+            <Typography variant='h3' sx={styles.city_typography}>
               <City cityName={weather.location.name} />
-              <DateContainer />
             </Typography>
-          </div>
+            <Typography sx={styles.weather_status_typography}>
+              {weather.current.condition.text}
+            </Typography>
+            <Typography sx={styles.feels_like_typography}>
+              {curLabel.Widget.feelsLike}
+              <Temperature>{weather.current.feelslike_c}</Temperature>
+            </Typography>
+          </Box>
           <WeatherIcon icon={weather.current.condition.icon} />
         </>
       )}
-    </Wrapper>
+    </Box>
   );
 };
 
