@@ -4,7 +4,7 @@ const mainColor = 'rgba(218, 223, 225, 0.1)';
 
 export const styles: SxStyles = {
   box_container: {
-    borderTop: `2px solid ${mainColor}`,
+    borderTop: `3px solid ${mainColor}`,
     backgroundColor: mainColor,
     backdropFilter: blurBackground,
     borderRadius: '5px',
