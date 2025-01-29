@@ -6,18 +6,28 @@ import { IWeather } from '../../common/types/IWeather';
 import { FC } from 'react';
 import ScheduleWidget from '../schedule-widget/schedule-widget';
 import { Box } from '@mui/material';
+import WeekSchedule from './week-schedule/week-schedule';
 
 interface Props {
-  data: IWeather | undefined;
+  data: IWeather;
 }
 
 const Forecast: FC<Props> = ({ data }) => {
   return (
-    <Box sx={styles.box_container}>
-      <div>
+    <Box sx={styles.forecast_container}>
+      <Box sx={styles.forecast_group}>
         <InputCity />
+        {data ? (
+          <Box sx={styles.forecast_group}>
+            <WeekSchedule weeks={data?.forecast.forecastday} />
+          </Box>
+        ) : (
+          <Box>
+            <CircularLoader />
+          </Box>
+        )}
         {data ? <WeatherDetails weather={data} /> : <CircularLoader />}
-      </div>
+      </Box>
       {data ? (
         <ScheduleWidget schedule={data?.forecast.forecastday} />
       ) : (

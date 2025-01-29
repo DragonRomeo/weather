@@ -1,7 +1,7 @@
 import { SxStyles } from '../../common/types/common';
 
 export const styles: SxStyles = {
-  box_container: {
+  forecast_container: {
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
@@ -9,4 +9,6 @@ export const styles: SxStyles = {
     paddingLeft: '35px',
     gap: '50px',
   },
+  forecast_group: { display: 'flex', flexDirection: 'column', gap: '30px' },
+  forecast_week: { width: '300px' },
 };
