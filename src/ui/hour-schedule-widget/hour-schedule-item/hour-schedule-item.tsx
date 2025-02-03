@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
 import WeatherIcon from '../../widget/weather-icon/weather-icon';
 import Temperature from '../../widget/temperature/temperature';
-import { styles } from './schedule-item.styles';
+import { styles } from './hour-schedule-item.styles';
 
 interface Props {
   time: number;
@@ -11,7 +11,7 @@ interface Props {
   weatherStatus: string;
 }
 
-const ScheduleItem: FC<Props> = ({
+const HourScheduleItem: FC<Props> = ({
   time,
   temperature,
   icon,
@@ -33,4 +33,4 @@ const ScheduleItem: FC<Props> = ({
   );
 };
 
-export default ScheduleItem;
+export default HourScheduleItem;

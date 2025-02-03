@@ -5,7 +5,7 @@ import CircularLoader from '../circular-loader/circural-loader';
 import { IWeather } from '../../common/types/IWeather';
 import { FC } from 'react';
 import { Box } from '@mui/material';
-import ScheduleWidgetContainer from '../schedule-widget/schedule-widget.container';
+import HourScheduleWidgetContainer from '../hour-schedule-widget/hour-schedule-widget.container';
 import WeekScheduleContainer from './week-schedule/week-schedule.container';
 
 interface Props {
@@ -29,7 +29,7 @@ const Forecast: FC<Props> = ({ data }) => {
         {data ? <WeatherDetails weather={data} /> : <CircularLoader />}
       </Box>
       {data ? (
-        <ScheduleWidgetContainer days={data.forecast.forecastday} />
+        <HourScheduleWidgetContainer days={data.forecast.forecastday} />
       ) : (
         <div>
           <CircularLoader />
