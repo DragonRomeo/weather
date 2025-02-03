@@ -13,7 +13,7 @@ const ScheduleWidgetContainer: FC<Props> = ({ days }) => {
     (state: IRootState) => state.weather.dayOfTheWeek
   );
 
-  return <>{<ScheduleWidget schedule={days[dayIndex]} />}</>;
+  return <>{<ScheduleWidget schedule={days[dayIndex].hour} />}</>;
 };
 
 export default ScheduleWidgetContainer;

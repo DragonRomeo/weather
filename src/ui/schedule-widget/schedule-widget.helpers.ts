@@ -6,9 +6,9 @@ export const getCurrentTime = () => {
   return +time;
 };
 
-export const getHoursAfterCurrent = (schedule: IForecastday) => {
+export const getHoursAfterCurrent = (hours: IForecastday['hour']) => {
   const currentTime = getCurrentTime();
-  const day = schedule.hour;
+  const day = hours;
   const today = getHoursAfter(day, currentTime);
   return today;
 };
