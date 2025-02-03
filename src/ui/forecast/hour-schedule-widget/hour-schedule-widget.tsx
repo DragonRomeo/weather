@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material';
 import { FC, useState } from 'react';
-import { IForecastday } from '../../common/types/IWeather';
 import HourScheduleItem from './hour-schedule-item/hour-schedule-item';
 import { getHour } from './hour-schedule-widget.helpers';
-import { curLabel } from '../../common/lang/lang';
 import { styles } from './hour-schedule-widget.styles';
+import { IForecastday } from '../../../common/types/IWeather';
+import { curLabel } from '../../../common/lang/lang';
 
 interface Props {
   schedule: IForecastday['hour'];

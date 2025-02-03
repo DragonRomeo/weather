@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from '@mui/material';
 import { FC } from 'react';
-import WeatherIcon from '../../widget/weather-icon/weather-icon';
-import Temperature from '../../widget/temperature/temperature';
 import { styles } from './hour-schedule-item.styles';
-import { weekItemHoverBg } from '../../forecast/week-schedule/week-schedule-item/week-schedule-item.consts';
+import { weekItemHoverBg } from '../../week-schedule/week-schedule-item/week-schedule-item.consts';
+import WeatherIcon from '../../../widget/weather-icon/weather-icon';
+import Temperature from '../../../widget/temperature/temperature';
 
 interface Props {
   time: number;

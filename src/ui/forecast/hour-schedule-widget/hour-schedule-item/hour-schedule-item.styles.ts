@@ -1,4 +1,4 @@
-import { weekItemHoverBg } from '../../forecast/week-schedule/week-schedule-item/week-schedule-item.consts';
+import { weekItemHoverBg } from '../../week-schedule/week-schedule-item/week-schedule-item.consts';
 
 export const styles = {
   main_container: {
