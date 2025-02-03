@@ -7,19 +7,16 @@ import { styles } from './week-schedule.styles';
 
 interface Props {
   weeks: Array<IForecastday>;
+  callback?: (index: number) => void;
 }
 
-const WeekSchedule: FC<Props> = ({ weeks }) => {
+const WeekSchedule: FC<Props> = ({ weeks, callback }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleListItemClick = (index: number) => {
     setSelectedIndex(index);
+    callback && callback(index);
   };
-
-  /* TODO: There will be a container for the indicators that will accept all days.
-  The current day (or array index) will be placed in redux
-  The container will request an index from redux and, depending on it, give the desired day
-  */
 
   return (
     <WeatherBox>

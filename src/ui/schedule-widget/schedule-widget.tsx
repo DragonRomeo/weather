@@ -7,7 +7,7 @@ import { curLabel } from '../../common/lang/lang';
 import { styles } from './schedule-widget.styles';
 
 interface Props {
-  schedule: Array<IForecastday>;
+  schedule: IForecastday;
 }
 
 const ScheduleWidget: FC<Props> = ({ schedule }) => {
