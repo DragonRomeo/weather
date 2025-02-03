@@ -1,17 +1,16 @@
 import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
 import { IForecastday } from '../../common/types/IWeather';
-import ScheduleItem from './schedule-item/schedule-item';
-import { getHour, getHoursAfterCurrent } from './schedule-widget.helpers';
+import ScheduleItem from './hour-schedule-item/hour-schedule-item';
+import { getHour } from './hour-schedule-widget.helpers';
 import { curLabel } from '../../common/lang/lang';
-import { styles } from './schedule-widget.styles';
+import { styles } from './hour-schedule-widget.styles';
 
 interface Props {
-  schedule: Array<IForecastday>;
+  schedule: IForecastday['hour'];
 }
 
-const ScheduleWidget: FC<Props> = ({ schedule }) => {
-  const filteredSchedule = getHoursAfterCurrent(schedule);
+const HourScheduleWidget: FC<Props> = ({ schedule }) => {
   return (
     <Box component='div' sx={styles.box_container}>
       <Box sx={styles.title_wrapper}>
@@ -19,7 +18,7 @@ const ScheduleWidget: FC<Props> = ({ schedule }) => {
           {curLabel.ScheduleWidget.TITLE}
         </Typography>
       </Box>
-      {filteredSchedule.map((hour, index) => (
+      {schedule.map((hour, index) => (
         <ScheduleItem
           key={index}
           time={getHour(hour.time)}
@@ -32,4 +31,4 @@ const ScheduleWidget: FC<Props> = ({ schedule }) => {
   );
 };
 
-export default ScheduleWidget;
+export default HourScheduleWidget;
