@@ -6,16 +6,11 @@ export const getCurrentTime = () => {
   return +time;
 };
 
-export const getHoursAfterCurrent = (schedule: Array<IForecastday>) => {
+export const getHoursAfterCurrent = (hours: IForecastday['hour']) => {
   const currentTime = getCurrentTime();
-  const day1 = schedule[0].hour;
-  const day2 = schedule[1].hour;
-
-  const today = getHoursAfter(day1, currentTime);
-  const tomorrow = getHoursAfter(day2, 0, currentTime);
-  const concat = today.concat(tomorrow);
-  const removeCurrentHour = concat.shift();
-  return concat;
+  const day = hours;
+  const today = getHoursAfter(day, currentTime);
+  return today;
 };
 
 export const getHoursAfter = (
