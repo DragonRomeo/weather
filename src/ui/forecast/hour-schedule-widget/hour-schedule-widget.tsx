@@ -1,16 +1,23 @@
 import { Box, Typography } from '@mui/material';
-import { FC } from 'react';
-import { IForecastday } from '../../common/types/IWeather';
-import ScheduleItem from './hour-schedule-item/hour-schedule-item';
+import { FC, useState } from 'react';
+import HourScheduleItem from './hour-schedule-item/hour-schedule-item';
 import { getHour } from './hour-schedule-widget.helpers';
-import { curLabel } from '../../common/lang/lang';
 import { styles } from './hour-schedule-widget.styles';
+import { IForecastday } from '../../../common/types/IWeather';
+import { curLabel } from '../../../common/lang/lang';
 
 interface Props {
   schedule: IForecastday['hour'];
+  callback?: (index: number) => void;
 }
 
-const HourScheduleWidget: FC<Props> = ({ schedule }) => {
+const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleListItemClick = (index: number) => {
+    setSelectedIndex(index);
+    callback && callback(index);
+  };
   return (
     <Box component='div' sx={styles.box_container}>
       <Box sx={styles.title_wrapper}>
@@ -19,12 +26,14 @@ const HourScheduleWidget: FC<Props> = ({ schedule }) => {
         </Typography>
       </Box>
       {schedule.map((hour, index) => (
-        <ScheduleItem
+        <HourScheduleItem
           key={index}
           time={getHour(hour.time)}
           temperature={hour.temp_c}
           icon={hour.condition.icon}
           weatherStatus={hour.condition.text}
+          selected={selectedIndex === index}
+          onClick={() => handleListItemClick(index)}
         />
       ))}
     </Box>

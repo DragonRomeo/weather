@@ -5,7 +5,7 @@ import CircularLoader from '../circular-loader/circural-loader';
 import { IWeather } from '../../common/types/IWeather';
 import { FC } from 'react';
 import { Box } from '@mui/material';
-import HourScheduleWidgetContainer from '../hour-schedule-widget/hour-schedule-widget.container';
+import HourScheduleWidgetContainer from '../forecast/hour-schedule-widget/hour-schedule-widget.container';
 import WeekScheduleContainer from './week-schedule/week-schedule.container';
 
 interface Props {
