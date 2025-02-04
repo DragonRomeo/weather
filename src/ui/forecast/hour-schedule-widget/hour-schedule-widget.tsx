@@ -3,12 +3,12 @@ import { FC, useState } from 'react';
 import HourScheduleItem from './hour-schedule-item/hour-schedule-item';
 import { getHour } from './hour-schedule-widget.helpers';
 import { styles } from './hour-schedule-widget.styles';
-import { IForecastday } from '../../../common/types/IWeather';
+import { IForecastday, IHour } from '../../../common/types/IWeather';
 import { curLabel } from '../../../common/lang/lang';
 
 interface Props {
   schedule: IForecastday['hour'];
-  callback?: (index: number) => void;
+  callback?: (hour: IHour) => void;
 }
 
 const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
@@ -16,7 +16,7 @@ const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
 
   const handleListItemClick = (index: number) => {
     setSelectedIndex(index);
-    callback && callback(index);
+    callback && callback(schedule[selectedIndex]);
   };
   return (
     <Box component='div' sx={styles.box_container}>

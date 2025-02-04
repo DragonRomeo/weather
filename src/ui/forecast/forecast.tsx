@@ -1,15 +1,15 @@
 import { styles } from './forecast.styles';
 import InputCity from './input-city/input-city';
-import WeatherDetails from './weather-details/weather-details';
 import CircularLoader from '../circular-loader/circural-loader';
 import { IWeather } from '../../common/types/IWeather';
 import { FC } from 'react';
 import { Box } from '@mui/material';
 import HourScheduleWidgetContainer from '../forecast/hour-schedule-widget/hour-schedule-widget.container';
 import WeekScheduleContainer from './week-schedule/week-schedule.container';
+import WeatherDetailsContainer from './weather-details/weather-details.container';
 
 interface Props {
-  data: IWeather;
+  data: IWeather | undefined;
 }
 
 const Forecast: FC<Props> = ({ data }) => {
@@ -26,7 +26,7 @@ const Forecast: FC<Props> = ({ data }) => {
             <CircularLoader />
           </Box>
         )}
-        {data ? <WeatherDetails weather={data} /> : <CircularLoader />}
+        <WeatherDetailsContainer />
       </Box>
       {data ? (
         <HourScheduleWidgetContainer days={data.forecast.forecastday} />

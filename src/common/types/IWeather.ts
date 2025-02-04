@@ -7,7 +7,7 @@ export interface IWeather {
 }
 
 export interface IForecastday {
-  hour: Array<iHour>;
+  hour: Array<IHour>;
   day: IDay;
   date: string;
 }
@@ -78,7 +78,7 @@ interface Current {
   gust_kph: number;
 }
 
-interface iHour extends Current {
+export interface IHour extends Current {
   time: string;
 }
 
