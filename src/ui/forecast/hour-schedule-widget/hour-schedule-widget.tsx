@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import HourScheduleItem from './hour-schedule-item/hour-schedule-item';
 import { getHour } from './hour-schedule-widget.helpers';
 import { styles } from './hour-schedule-widget.styles';
@@ -16,8 +16,12 @@ const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
 
   const handleListItemClick = (index: number) => {
     setSelectedIndex(index);
-    callback && callback(schedule[selectedIndex]);
   };
+
+  useEffect(() => {
+    callback && callback(schedule[selectedIndex]);
+  }, [selectedIndex]);
+
   return (
     <Box component='div' sx={styles.box_container}>
       <Box sx={styles.title_wrapper}>
