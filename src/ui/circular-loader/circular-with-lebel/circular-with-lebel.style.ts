@@ -1,5 +1,3 @@
-import { circularProgressClasses } from '@mui/material';
-
 export const styles = {
   circular_wrapper: {
     margin: '10px',
