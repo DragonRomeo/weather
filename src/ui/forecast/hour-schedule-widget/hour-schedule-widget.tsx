@@ -20,7 +20,7 @@ const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
 
   useEffect(() => {
     callback && callback(schedule[selectedIndex]);
-  }, [selectedIndex]);
+  }, [selectedIndex, schedule]);
 
   return (
     <Box component='div' sx={styles.box_container}>
