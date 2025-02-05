@@ -7,6 +7,7 @@ import TemporaryDrawer from '../temporary-drawer/temporary-drawer';
 import { id } from './app-content.consts';
 import { Box } from '@mui/material';
 import { getCityFromLocalStorage } from '../forecast/input-city/input-city.helpers';
+import ForecastContainer from '../forecast/forecast.container';
 
 const AppContent = () => {
   initLocalStorage();
@@ -18,7 +19,9 @@ const AppContent = () => {
       <Box sx={styles.widget_wrapper}>
         <WidgetContainer />
       </Box>
-      <TemporaryDrawer localStorageCreateId={id} />
+      <TemporaryDrawer localStorageCreateId={id}>
+        <ForecastContainer />
+      </TemporaryDrawer>
     </Content>
   );
 };
