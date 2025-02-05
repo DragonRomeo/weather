@@ -7,5 +7,6 @@ export const styles: SxStyles = {
     alignItems: 'center',
     gap: '5px',
     paddingTop: '4px',
+    minWidth: '220px',
   },
 };

@@ -1,5 +1,6 @@
 import {
-  blurBackground,
+  blurBackgroundDrawer,
+  darkBackgroundColor,
   muiBorderColor,
   MUISpacePx,
 } from '../../common/styles/consts';
@@ -14,7 +15,8 @@ export const styles: SxStyles = {
     right: '10px',
   },
   drawer_header: {
-    backdropFilter: blurBackground,
+    backgroundColor: darkBackgroundColor,
+    backdropFilter: blurBackgroundDrawer,
     $div: {
       display: 'flex',
       alignItems: 'center',

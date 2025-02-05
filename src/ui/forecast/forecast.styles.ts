@@ -5,7 +5,6 @@ export const styles: SxStyles = {
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
-    background: 'inherit',
     paddingLeft: '35px',
     gap: '50px',
   },

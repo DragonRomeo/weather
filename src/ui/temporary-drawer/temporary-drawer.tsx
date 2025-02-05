@@ -12,9 +12,13 @@ import SettingsContainer from '../settings/setting.container';
 
 interface Props {
   localStorageCreateId?: string;
+  children: React.ReactNode;
 }
 
-const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
+const TemporaryDrawer: FC<Props> = ({
+  localStorageCreateId = null,
+  children,
+}) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -50,7 +54,7 @@ const TemporaryDrawer: FC<Props> = ({ localStorageCreateId = null }) => {
               <ExpandCircleDownIcon fontSize='inherit' />
             </IconButton>
           </Box>
-          <ForecastContainer />
+          {children}
         </Box>
       </Drawer>
     </Box>
