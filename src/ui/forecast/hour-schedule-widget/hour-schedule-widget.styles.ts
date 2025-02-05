@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material';
-import { SxStyles } from '../../common/types/common';
+import { SxStyles } from '../../../common/types/common';
 
 export const styles: SxStyles = {
   box_container: (theme: Theme) => ({
@@ -17,5 +17,11 @@ export const styles: SxStyles = {
   }),
   title_wrapper: {
     marginBottom: '16px',
+  },
+  items_container: {
+    display: 'flex',
+    flexDirection: 'row',
+    overflowX: 'scroll',
+    gap: '5px',
   },
 };

@@ -29,17 +29,20 @@ const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
           {curLabel.ScheduleWidget.TITLE}
         </Typography>
       </Box>
-      {schedule.map((hour, index) => (
-        <HourScheduleItem
-          key={index}
-          time={getHour(hour.time)}
-          temperature={hour.temp_c}
-          icon={hour.condition.icon}
-          weatherStatus={hour.condition.text}
-          selected={selectedIndex === index}
-          onClick={() => handleListItemClick(index)}
-        />
-      ))}
+      <Box component='div' sx={styles.items_container}>
+        {schedule.map((hour, index) => (
+          <Box>
+            <HourScheduleItem
+              key={index}
+              time={getHour(hour.time)}
+              temperature={hour.temp_c}
+              icon={hour.condition.icon}
+              selected={selectedIndex === index}
+              onClick={() => handleListItemClick(index)}
+            />
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
