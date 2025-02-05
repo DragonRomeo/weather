@@ -9,7 +9,7 @@ interface Props {
   time: number;
   temperature: number;
   icon: string;
-  weatherStatus: string;
+  weatherStatus?: string;
   selected?: boolean;
   onClick?: () => void;
 }
@@ -31,11 +31,13 @@ const HourScheduleItem: FC<Props> = ({
     >
       <Box sx={styles.main_container}>
         <Box sx={styles.content_wrapper}>
-          <WeatherIcon icon={icon} />
-          <Box sx={styles.status_container}>
-            <Typography variant='body1'>{`${time}:00`}</Typography>
-            <Typography>{weatherStatus}</Typography>
-          </Box>
+          <Typography variant='subtitle1'>{`${time}:00`}</Typography>
+          <WeatherIcon width='40px' height='40px' icon={icon} />
+          {weatherStatus && (
+            <Box sx={styles.status_container}>
+              <Typography>{weatherStatus}</Typography>
+            </Box>
+          )}
         </Box>
         <Typography variant='h6'>
           <Temperature>{temperature}</Temperature>
