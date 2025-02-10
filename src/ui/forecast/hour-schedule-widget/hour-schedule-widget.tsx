@@ -5,6 +5,7 @@ import { getHour } from './hour-schedule-widget.helpers';
 import { styles } from './hour-schedule-widget.styles';
 import { IForecastday, IHour } from '../../../common/types/IWeather';
 import { curLabel } from '../../../common/lang/lang';
+import Slider from '../../slider/slider';
 
 interface Props {
   schedule: IForecastday['hour'];
@@ -29,20 +30,21 @@ const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
           {curLabel.ScheduleWidget.TITLE}
         </Typography>
       </Box>
-      <Box component='div' sx={styles.items_container}>
-        {schedule.map((hour, index) => (
-          <Box>
-            <HourScheduleItem
-              key={index}
-              time={getHour(hour.time)}
-              temperature={hour.temp_c}
-              icon={hour.condition.icon}
-              selected={selectedIndex === index}
-              onClick={() => handleListItemClick(index)}
-            />
-          </Box>
-        ))}
-      </Box>
+      <Slider>
+        <Box component='div' sx={styles.items_container}>
+          {schedule.map((hour, index) => (
+            <Box key={index}>
+              <HourScheduleItem
+                time={getHour(hour.time)}
+                temperature={hour.temp_c}
+                icon={hour.condition.icon}
+                selected={selectedIndex === index}
+                onClick={() => handleListItemClick(index)}
+              />
+            </Box>
+          ))}
+        </Box>
+      </Slider>
     </Box>
   );
 };
