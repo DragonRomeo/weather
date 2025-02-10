@@ -7,6 +7,7 @@ export const styles: SxStyles = {
     flexDirection: 'column',
     overflowX: 'hidden',
     maxWidth: '80%',
+    width: '100%',
     marginTop: '26px',
     gap: '10px',
     ...theme.applyStyles('dark', {
@@ -21,7 +22,6 @@ export const styles: SxStyles = {
   items_container: {
     display: 'flex',
     flexDirection: 'row',
-    overflowX: 'scroll',
     gap: '5px',
   },
 };
