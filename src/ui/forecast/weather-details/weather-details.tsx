@@ -1,5 +1,4 @@
 import React from 'react';
-import WeatherItem from './weather-item/weather-item';
 import { IHour } from '../../../common/types/IWeather';
 import { WeatherItems } from './weather-details.consts';
 import { styles } from './weather-details.styles';
@@ -8,7 +7,7 @@ import { getMetersPerSecond } from './weather-details.helpers';
 import { Box, Typography } from '@mui/material';
 import WeatherBoxLabel from '../../weather-box/weather-box-label/weather-box-label';
 import CircularProgressWithLabel from '../../circular-loader/circular-with-lebel/circular-with-lebel';
-import { capitalizeLabel } from '../../../common/helpers/string';
+import { capitalize } from '../../../common/helpers/string';
 import { muiBorderColor } from '../../../common/styles/consts';
 
 type Props = {
@@ -28,7 +27,7 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
               <Box sx={styles.weather_details_items_group}>
                 <WeatherBoxLabel
                   icon={WeatherItems.Humidity.icon}
-                  title={capitalizeLabel(WeatherItems.Humidity.name)}
+                  title={capitalize(WeatherItems.Humidity.name)}
                 >
                   <Box sx={styles.weather_details_item_content}>
                     <CircularProgressWithLabel
@@ -40,7 +39,7 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                 </WeatherBoxLabel>
                 <WeatherBoxLabel
                   icon={WeatherItems.Cloudy.icon}
-                  title={capitalizeLabel(WeatherItems.Cloudy.name)}
+                  title={capitalize(WeatherItems.Cloudy.name)}
                 >
                   <Box sx={styles.weather_details_item_content}>
                     <CircularProgressWithLabel
@@ -54,7 +53,7 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
               <Box sx={styles.weather_details_items_group}>
                 <WeatherBoxLabel
                   icon={WeatherItems.Wind.icon}
-                  title={capitalizeLabel(WeatherItems.Wind.name)}
+                  title={capitalize(WeatherItems.Wind.name)}
                 >
                   <Box sx={styles.weather_details_item_wind}>
                     <Typography
@@ -65,12 +64,19 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                     }`}</Typography>
                   </Box>
                 </WeatherBoxLabel>
-                <WeatherItem
-                  name={WeatherItems.FeelsLike.name}
-                  value={Math.round(hour.feelslike_c)}
-                  unitOfMeasure={WeatherItems.FeelsLike.unitOfMeasure}
+                <WeatherBoxLabel
                   icon={WeatherItems.FeelsLike.icon}
-                ></WeatherItem>
+                  title={capitalize(WeatherItems.FeelsLike.name)}
+                >
+                  <Box sx={styles.weather_details_item_wind}>
+                    <Typography
+                      variant='h4'
+                      sx={{ whiteSpace: 'nowrap' }}
+                    >{`${Math.round(hour.feelslike_c)} ${
+                      WeatherItems.FeelsLike.unitOfMeasure
+                    }`}</Typography>
+                  </Box>
+                </WeatherBoxLabel>
               </Box>
             </Box>
           </Box>
