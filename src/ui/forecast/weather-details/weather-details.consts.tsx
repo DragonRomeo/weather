@@ -1,8 +1,8 @@
-import cloudIcon from '../../../assets/icons/cloud-icon.svg';
 import windIcon from '../../../assets/icons/wind-icon.svg';
 import temperatureIcon from '../../../assets/icons/temperature-icon.svg';
 import { curLabel } from '../../../common/lang/lang';
 import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
+import FilterDramaOutlinedIcon from '@mui/icons-material/FilterDramaOutlined';
 
 export const weatherDetailsConsts = {
   title: 'Weather details...',
@@ -10,11 +10,6 @@ export const weatherDetailsConsts = {
 
 // Icons
 export const WeatherDetailsIcons = {
-  CloudIcon: {
-    src: cloudIcon,
-    width: '22px',
-    height: '22px',
-  },
   WindIcon: {
     src: windIcon,
     width: '24px',
@@ -36,7 +31,7 @@ export const WeatherItems = {
   Cloudy: {
     name: curLabel.WeatherDetails.cloudy.name,
     unitOfMeasure: curLabel.WeatherDetails.cloudy.unitOfMeasure,
-    icon: WeatherDetailsIcons.CloudIcon,
+    icon: <FilterDramaOutlinedIcon />,
   },
   Wind: {
     name: curLabel.WeatherDetails.wind.name,
