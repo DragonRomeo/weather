@@ -1,24 +1,24 @@
-import { MUISpacePx } from '../../../common/styles/consts';
-import { styled } from '@mui/material';
+import { SxStyles } from '../../../common/types/common';
 
-export const Wrapper = styled('div')({
-  display: 'flex',
-  width: '80%',
-  borderBottom: '1px solid white',
-  paddingBottom: MUISpacePx * 4,
-});
-
-export const Container = styled('div')({
-  display: 'flex',
-  width: '100%',
-  flexDirection: 'column',
-  background: 'inherit',
-  marginTop: MUISpacePx * 5,
-});
-
-export const WeatherContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '30px',
-  marginTop: MUISpacePx * 5,
-});
+export const styles: SxStyles = {
+  weather_details_wrapper: {
+    display: 'flex',
+    width: '80%',
+    marginBottom: '32px',
+  },
+  weather_details_container: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+    background: 'inherit',
+  },
+  weather_details_content: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '30px',
+  },
+  weather_details_items_group: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+};
