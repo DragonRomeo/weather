@@ -6,6 +6,10 @@ import { styles } from './weather-details.styles';
 import { curLabel } from '../../../common/lang/lang';
 import { getMetersPerSecond } from './weather-details.helpers';
 import { Box } from '@mui/material';
+import WeatherBoxLabel from '../../weather-box/weather-box-label/weather-box-label';
+import CircularProgressWithLabel from '../../circular-loader/circular-with-lebel/circular-with-lebel';
+import { capitalizeLabel } from '../../../common/helpers/string';
+import { muiBorderColor } from '../../../common/styles/consts';
 
 type Props = {
   hour: IHour;
@@ -21,12 +25,18 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
           <Box sx={styles.weather_details_content}>
             <h3>{hour.condition.text.toUpperCase()}</h3>
             <Box sx={styles.weather_details_items_group}>
-              <WeatherItem
-                name={WeatherItems.Humidity.name}
-                value={hour.humidity}
-                unitOfMeasure={WeatherItems.Humidity.unitOfMeasure}
+              <WeatherBoxLabel
                 icon={WeatherItems.Humidity.icon}
-              ></WeatherItem>
+                title={capitalizeLabel(WeatherItems.Humidity.name)}
+              >
+                <Box sx={styles.weather_details_item_content}>
+                  <CircularProgressWithLabel
+                    sx={{ color: muiBorderColor }}
+                    thickness={3}
+                    value={hour.humidity}
+                  />
+                </Box>
+              </WeatherBoxLabel>
               <WeatherItem
                 name={WeatherItems.Cloudy.name}
                 value={hour.cloud}

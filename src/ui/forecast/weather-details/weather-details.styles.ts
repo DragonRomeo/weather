@@ -21,4 +21,5 @@ export const styles: SxStyles = {
     display: 'flex',
     flexDirection: 'row',
   },
+  weather_details_item_content: { margin: '40px 80px' },
 };
