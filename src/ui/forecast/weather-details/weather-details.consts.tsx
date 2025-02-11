@@ -1,8 +1,8 @@
-import windIcon from '../../../assets/icons/wind-icon.svg';
 import temperatureIcon from '../../../assets/icons/temperature-icon.svg';
 import { curLabel } from '../../../common/lang/lang';
 import WaterDropOutlinedIcon from '@mui/icons-material/WaterDropOutlined';
 import FilterDramaOutlinedIcon from '@mui/icons-material/FilterDramaOutlined';
+import AirOutlinedIcon from '@mui/icons-material/AirOutlined';
 
 export const weatherDetailsConsts = {
   title: 'Weather details...',
@@ -10,11 +10,6 @@ export const weatherDetailsConsts = {
 
 // Icons
 export const WeatherDetailsIcons = {
-  WindIcon: {
-    src: windIcon,
-    width: '24px',
-    height: '19px',
-  },
   TemperatureIcon: {
     src: temperatureIcon,
     width: '14px',
@@ -36,7 +31,7 @@ export const WeatherItems = {
   Wind: {
     name: curLabel.WeatherDetails.wind.name,
     unitOfMeasure: curLabel.WeatherDetails.wind.unitOfMeasure,
-    icon: WeatherDetailsIcons.WindIcon,
+    icon: <AirOutlinedIcon />,
   },
   FeelsLike: {
     name: curLabel.WeatherDetails.fellsLike.name,
