@@ -3,7 +3,7 @@ import { SxStyles } from '../../../common/types/common';
 export const styles: SxStyles = {
   weather_details_wrapper: {
     display: 'flex',
-    width: '80%',
+    width: '100%',
     marginBottom: '32px',
   },
   weather_details_container: {
@@ -20,6 +20,8 @@ export const styles: SxStyles = {
   weather_details_content_container: {
     display: 'flex',
     flexDirection: 'row',
+    gap: '30px',
+    flexWrap: 'wrap',
   },
   weather_details_items_group: {
     display: 'flex',
@@ -27,5 +29,12 @@ export const styles: SxStyles = {
     gap: '30px',
   },
 
-  weather_details_item_content: { margin: '40px 80px' },
+  weather_details_item_content: {
+    margin: '40px 80px',
+  },
+  weather_details_item_wind: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: '60px 80px',
+  },
 };

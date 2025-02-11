@@ -5,7 +5,7 @@ import { WeatherItems } from './weather-details.consts';
 import { styles } from './weather-details.styles';
 import { curLabel } from '../../../common/lang/lang';
 import { getMetersPerSecond } from './weather-details.helpers';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import WeatherBoxLabel from '../../weather-box/weather-box-label/weather-box-label';
 import CircularProgressWithLabel from '../../circular-loader/circular-with-lebel/circular-with-lebel';
 import { capitalizeLabel } from '../../../common/helpers/string';
@@ -52,12 +52,19 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                 </WeatherBoxLabel>
               </Box>
               <Box sx={styles.weather_details_items_group}>
-                <WeatherItem
-                  name={WeatherItems.Wind.name}
-                  value={getMetersPerSecond(hour.wind_kph)}
-                  unitOfMeasure={WeatherItems.Wind.unitOfMeasure}
+                <WeatherBoxLabel
                   icon={WeatherItems.Wind.icon}
-                ></WeatherItem>
+                  title={capitalizeLabel(WeatherItems.Wind.name)}
+                >
+                  <Box sx={styles.weather_details_item_wind}>
+                    <Typography
+                      variant='h4'
+                      sx={{ whiteSpace: 'nowrap' }}
+                    >{`${getMetersPerSecond(hour.wind_kph)} ${
+                      WeatherItems.Wind.unitOfMeasure
+                    }`}</Typography>
+                  </Box>
+                </WeatherBoxLabel>
                 <WeatherItem
                   name={WeatherItems.FeelsLike.name}
                   value={Math.round(hour.feelslike_c)}
