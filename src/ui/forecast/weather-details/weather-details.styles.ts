@@ -17,9 +17,15 @@ export const styles: SxStyles = {
     flexDirection: 'column',
     gap: '30px',
   },
-  weather_details_items_group: {
+  weather_details_content_container: {
     display: 'flex',
     flexDirection: 'row',
   },
+  weather_details_items_group: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '30px',
+  },
+
   weather_details_item_content: { margin: '40px 80px' },
 };

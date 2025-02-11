@@ -24,39 +24,47 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
         {hour && (
           <Box sx={styles.weather_details_content}>
             <h3>{hour.condition.text.toUpperCase()}</h3>
-            <Box sx={styles.weather_details_items_group}>
-              <WeatherBoxLabel
-                icon={WeatherItems.Humidity.icon}
-                title={capitalizeLabel(WeatherItems.Humidity.name)}
-              >
-                <Box sx={styles.weather_details_item_content}>
-                  <CircularProgressWithLabel
-                    sx={{ color: muiBorderColor }}
-                    thickness={3}
-                    value={hour.humidity}
-                  />
-                </Box>
-              </WeatherBoxLabel>
-              <WeatherItem
-                name={WeatherItems.Cloudy.name}
-                value={hour.cloud}
-                unitOfMeasure={WeatherItems.Cloudy.unitOfMeasure}
-                icon={WeatherItems.Cloudy.icon}
-              ></WeatherItem>
-            </Box>
-            <Box sx={styles.weather_details_items_group}>
-              <WeatherItem
-                name={WeatherItems.Wind.name}
-                value={getMetersPerSecond(hour.wind_kph)}
-                unitOfMeasure={WeatherItems.Wind.unitOfMeasure}
-                icon={WeatherItems.Wind.icon}
-              ></WeatherItem>
-              <WeatherItem
-                name={WeatherItems.FeelsLike.name}
-                value={Math.round(hour.feelslike_c)}
-                unitOfMeasure={WeatherItems.FeelsLike.unitOfMeasure}
-                icon={WeatherItems.FeelsLike.icon}
-              ></WeatherItem>
+            <Box sx={styles.weather_details_content_container}>
+              <Box sx={styles.weather_details_items_group}>
+                <WeatherBoxLabel
+                  icon={WeatherItems.Humidity.icon}
+                  title={capitalizeLabel(WeatherItems.Humidity.name)}
+                >
+                  <Box sx={styles.weather_details_item_content}>
+                    <CircularProgressWithLabel
+                      sx={{ color: muiBorderColor }}
+                      thickness={3}
+                      value={hour.humidity}
+                    />
+                  </Box>
+                </WeatherBoxLabel>
+                <WeatherBoxLabel
+                  icon={WeatherItems.Cloudy.icon}
+                  title={capitalizeLabel(WeatherItems.Cloudy.name)}
+                >
+                  <Box sx={styles.weather_details_item_content}>
+                    <CircularProgressWithLabel
+                      sx={{ color: muiBorderColor }}
+                      thickness={3}
+                      value={hour.cloud}
+                    />
+                  </Box>
+                </WeatherBoxLabel>
+              </Box>
+              <Box sx={styles.weather_details_items_group}>
+                <WeatherItem
+                  name={WeatherItems.Wind.name}
+                  value={getMetersPerSecond(hour.wind_kph)}
+                  unitOfMeasure={WeatherItems.Wind.unitOfMeasure}
+                  icon={WeatherItems.Wind.icon}
+                ></WeatherItem>
+                <WeatherItem
+                  name={WeatherItems.FeelsLike.name}
+                  value={Math.round(hour.feelslike_c)}
+                  unitOfMeasure={WeatherItems.FeelsLike.unitOfMeasure}
+                  icon={WeatherItems.FeelsLike.icon}
+                ></WeatherItem>
+              </Box>
             </Box>
           </Box>
         )}
