@@ -1,3 +1,4 @@
+import { forecast_max_width_container } from '../../common/styles/consts';
 import { SxStyles } from '../../common/types/common';
 
 export const styles: SxStyles = {
@@ -14,5 +15,8 @@ export const styles: SxStyles = {
     alignItems: 'center',
     gap: '30px',
   },
-  forecast_week: { width: '300px' },
+  forecast_week: {
+    maxWidth: forecast_max_width_container,
+    width: '100%',
+  },
 };
