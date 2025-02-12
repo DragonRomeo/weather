@@ -6,13 +6,19 @@ import { styles } from './hour-schedule-widget.styles';
 import { IForecastday, IHour } from '../../../common/types/IWeather';
 import { curLabel } from '../../../common/lang/lang';
 import Slider from '../../slider/slider';
+import WeatherBox from '../../weather-box/weather-box';
 
 interface Props {
   schedule: IForecastday['hour'];
   callback?: (hour: IHour) => void;
+  haveTitle?: boolean;
 }
 
-const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
+const HourScheduleWidget: FC<Props> = ({
+  schedule,
+  callback,
+  haveTitle = false,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleListItemClick = (index: number) => {
@@ -25,26 +31,30 @@ const HourScheduleWidget: FC<Props> = ({ schedule, callback }) => {
 
   return (
     <Box component='div' sx={styles.box_container}>
-      <Box sx={styles.title_wrapper}>
-        <Typography variant='subtitle1'>
-          {curLabel.ScheduleWidget.TITLE}
-        </Typography>
-      </Box>
-      <Slider>
-        <Box component='div' sx={styles.items_container}>
-          {schedule.map((hour, index) => (
-            <Box key={index}>
-              <HourScheduleItem
-                time={getHour(hour.time)}
-                temperature={hour.temp_c}
-                icon={hour.condition.icon}
-                selected={selectedIndex === index}
-                onClick={() => handleListItemClick(index)}
-              />
+      <WeatherBox>
+        <Box sx={{ padding: '18px 0' }}>
+          <Box sx={styles.title_wrapper}>
+            <Typography variant='subtitle1'>
+              {haveTitle && curLabel.ScheduleWidget.TITLE}
+            </Typography>
+          </Box>
+          <Slider>
+            <Box component='div' sx={styles.items_container}>
+              {schedule.map((hour, index) => (
+                <Box key={index}>
+                  <HourScheduleItem
+                    time={getHour(hour.time)}
+                    temperature={hour.temp_c}
+                    icon={hour.condition.icon}
+                    selected={selectedIndex === index}
+                    onClick={() => handleListItemClick(index)}
+                  />
+                </Box>
+              ))}
             </Box>
-          ))}
+          </Slider>
         </Box>
-      </Slider>
+      </WeatherBox>
     </Box>
   );
 };

@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from 'react';
 import ForecastSwitchButton from '../forecast-switch-button/forecast-switch-button';
 import { Box, Drawer, IconButton } from '@mui/material';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
-import ForecastContainer from '../forecast/forecast.container';
 import { drawerProps, styles } from './temporary-drawer.styles';
 import {
   setDrawerIdToLs,

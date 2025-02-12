@@ -6,7 +6,7 @@ export const styles: SxStyles = {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    paddingLeft: '35px',
+    padding: '0 35px',
     gap: '30px',
   },
   forecast_group: {
