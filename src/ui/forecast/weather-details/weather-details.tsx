@@ -56,12 +56,14 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                   title={capitalize(WeatherItems.Wind.name)}
                 >
                   <Box sx={styles.weather_details_item_wind}>
-                    <Typography
-                      variant='h4'
-                      sx={{ whiteSpace: 'nowrap' }}
-                    >{`${getMetersPerSecond(hour.wind_kph)} ${
-                      WeatherItems.Wind.unitOfMeasure
-                    }`}</Typography>
+                    <Box sx={styles.weather_details_wind_typography_wrapper}>
+                      <Typography
+                        variant='h4'
+                        sx={{ whiteSpace: 'nowrap' }}
+                      >{`${getMetersPerSecond(hour.wind_kph)} ${
+                        WeatherItems.Wind.unitOfMeasure
+                      }`}</Typography>
+                    </Box>
                   </Box>
                 </WeatherBoxLabel>
                 <WeatherBoxLabel
@@ -69,12 +71,16 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                   title={capitalize(WeatherItems.FeelsLike.name)}
                 >
                   <Box sx={styles.weather_details_item_wind}>
-                    <Typography
-                      variant='h4'
-                      sx={{ whiteSpace: 'nowrap' }}
-                    >{`${Math.round(hour.feelslike_c)} ${
-                      WeatherItems.FeelsLike.unitOfMeasure
-                    }`}</Typography>
+                    <Box
+                      sx={styles.weather_details_feelslike_typography_wrapper}
+                    >
+                      <Typography
+                        variant='h4'
+                        sx={{ whiteSpace: 'nowrap' }}
+                      >{`${Math.round(hour.feelslike_c)} ${
+                        WeatherItems.FeelsLike.unitOfMeasure
+                      }`}</Typography>
+                    </Box>
                   </Box>
                 </WeatherBoxLabel>
               </Box>

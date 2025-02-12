@@ -28,7 +28,6 @@ export const styles: SxStyles = {
     flexDirection: 'row',
     gap: '30px',
   },
-
   weather_details_item_content: {
     margin: '40px 80px',
   },
@@ -36,5 +35,11 @@ export const styles: SxStyles = {
     display: 'flex',
     alignItems: 'center',
     margin: '60px 80px',
+  },
+  weather_details_wind_typography_wrapper: {
+    width: '120px',
+  },
+  weather_details_feelslike_typography_wrapper: {
+    width: '70px',
   },
 };
