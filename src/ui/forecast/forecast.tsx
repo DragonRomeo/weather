@@ -18,11 +18,11 @@ const Forecast: FC<Props> = ({ data }) => {
       <InputCity />
       <Box sx={styles.forecast_group}>
         {data ? (
-          <Box sx={styles.forecast_group}>
+          <Box sx={styles.forecast_week}>
             <WeekScheduleContainer weeks={data.forecast.forecastday} />
           </Box>
         ) : (
-          <Box>
+          <Box sx={styles.forecast_week}>
             <CircularLoader />
           </Box>
         )}
