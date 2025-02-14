@@ -15,26 +15,26 @@ interface Props {
 const Forecast: FC<Props> = ({ data }) => {
   return (
     <Box sx={styles.forecast_container}>
+      <InputCity />
       <Box sx={styles.forecast_group}>
-        <InputCity />
         {data ? (
-          <Box sx={styles.forecast_group}>
+          <Box sx={styles.forecast_week}>
             <WeekScheduleContainer weeks={data.forecast.forecastday} />
           </Box>
         ) : (
-          <Box>
+          <Box sx={styles.forecast_week}>
             <CircularLoader />
           </Box>
         )}
-        <WeatherDetailsContainer />
+        {data ? (
+          <HourScheduleWidgetContainer days={data.forecast.forecastday} />
+        ) : (
+          <div>
+            <CircularLoader />
+          </div>
+        )}
       </Box>
-      {data ? (
-        <HourScheduleWidgetContainer days={data.forecast.forecastday} />
-      ) : (
-        <div>
-          <CircularLoader />
-        </div>
-      )}
+      <WeatherDetailsContainer />
     </Box>
   );
 };

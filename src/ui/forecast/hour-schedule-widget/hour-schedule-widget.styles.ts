@@ -8,7 +8,6 @@ export const styles: SxStyles = {
     overflowX: 'hidden',
     maxWidth: '80%',
     width: '100%',
-    marginTop: '26px',
     gap: '10px',
     ...theme.applyStyles('dark', {
       background: 'inherit',
@@ -16,9 +15,7 @@ export const styles: SxStyles = {
       borderColor: 'grey.800',
     }),
   }),
-  title_wrapper: {
-    marginBottom: '16px',
-  },
+  title_wrapper: {},
   items_container: {
     display: 'flex',
     flexDirection: 'row',
