@@ -6,7 +6,8 @@ import {
 } from '../../common/styles/consts';
 import { SxStyles } from '../../common/types/common';
 
-const width = '80%';
+const maxWidth = '100%';
+const width = '76%';
 
 export const styles: SxStyles = {
   drawer_container: {
@@ -38,7 +39,7 @@ export const drawerProps = {
     style: {
       width: width,
       height: '80%',
-      left: `calc((${'100%'} - ${width}) / 2)`,
+      left: `calc((${maxWidth} - ${width}) / 2)`,
       backgroundColor: 'inherit',
     },
   },
