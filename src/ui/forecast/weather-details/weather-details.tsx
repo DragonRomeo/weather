@@ -17,19 +17,23 @@ type Props = {
 
 const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
   return (
-    <Box sx={styles.weather_details_wrapper}>
-      <Box sx={styles.weather_details_container}>
+    <Box sx={styles.weather_wrapper}>
+      <Box sx={styles.weather_container}>
         {isTitle && <h4>{curLabel.WeatherDetails.TITLE}</h4>}
         {hour && (
-          <Box sx={styles.weather_details_content}>
-            <h3>{hour.condition.text.toUpperCase()}</h3>
-            <Box sx={styles.weather_details_content_container}>
-              <Box sx={styles.weather_details_items_group}>
+          <Box sx={styles.weather_content}>
+            <Typography
+             variant='h5'
+              sx={styles.weather_status}>
+              {hour.condition.text.toUpperCase()}
+            </Typography>
+            <Box sx={styles.weather_content_container}>
+              <Box sx={styles.weather_item}>
                 <WeatherBoxLabel
                   icon={WeatherItems.Humidity.icon}
                   title={capitalize(WeatherItems.Humidity.name)}
                 >
-                  <Box sx={styles.weather_details_item_content}>
+                  <Box sx={styles.weather_item_content}>
                     <CircularProgressWithLabel
                       sx={{ color: muiBorderColor }}
                       thickness={3}
@@ -37,11 +41,13 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                     />
                   </Box>
                 </WeatherBoxLabel>
+              </Box>
+              <Box sx={styles.weather_item}>
                 <WeatherBoxLabel
                   icon={WeatherItems.Cloudy.icon}
                   title={capitalize(WeatherItems.Cloudy.name)}
                 >
-                  <Box sx={styles.weather_details_item_content}>
+                  <Box sx={styles.weather_item_content}>
                     <CircularProgressWithLabel
                       sx={{ color: muiBorderColor }}
                       thickness={3}
@@ -50,33 +56,33 @@ const WeatherDetails: React.FC<Props> = ({ hour, isTitle = false }) => {
                   </Box>
                 </WeatherBoxLabel>
               </Box>
-              <Box sx={styles.weather_details_items_group}>
+              <Box sx={styles.weather_item}>
                 <WeatherBoxLabel
                   icon={WeatherItems.Wind.icon}
                   title={capitalize(WeatherItems.Wind.name)}
                 >
-                  <Box sx={styles.weather_details_item_wind}>
-                    <Box sx={styles.weather_details_wind_typography_wrapper}>
+                  <Box sx={styles.weather_item_wind}>
+                    <Box sx={styles.weather_wind_typography_wrapper}>
                       <Typography
                         variant='h4'
-                        sx={{ whiteSpace: 'nowrap' }}
+                        sx={styles.weather_item_typography}
                       >{`${getMetersPerSecond(hour.wind_kph)} ${
                         WeatherItems.Wind.unitOfMeasure
                       }`}</Typography>
                     </Box>
                   </Box>
                 </WeatherBoxLabel>
+              </Box>
+              <Box sx={styles.weather_item}>
                 <WeatherBoxLabel
                   icon={WeatherItems.FeelsLike.icon}
                   title={capitalize(WeatherItems.FeelsLike.name)}
                 >
-                  <Box sx={styles.weather_details_item_wind}>
-                    <Box
-                      sx={styles.weather_details_feelslike_typography_wrapper}
-                    >
+                  <Box sx={styles.weather_item_wind}>
+                    <Box sx={styles.weather_feelslike_typography_wrapper}>
                       <Typography
                         variant='h4'
-                        sx={{ whiteSpace: 'nowrap' }}
+                        sx={styles.weather_item_typography}
                       >{`${Math.round(hour.feelslike_c)} ${
                         WeatherItems.FeelsLike.unitOfMeasure
                       }`}</Typography>

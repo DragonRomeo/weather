@@ -18,4 +18,4 @@ export const blurBackgroundDrawer = 'blur(30px)';
 
 export const darkBackgroundColor = 'rgba(0,0,0,0.6)';
 
-export const forecastItemMaxWidth = '300px';
+export const forecastItemMaxWidth = '310px';
